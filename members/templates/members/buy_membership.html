@@ -1,0 +1,16 @@
+{% extends 'base.html' %}
+{% block content %}
+<div class="container mt-5">
+    <h3>Choose Your Plan</h3>
+    <form method="POST">
+        {% csrf_token %}
+        <select name="plan" class="form-control mb-3" required>
+            <option value="">Select a plan</option>
+            <option value="basic">Basic</option>
+            <option value="premium">Premium</option>
+            <option value="pro">Pro</option>
+        </select>
+        <button type="submit" class="btn btn-success">Purchase</button>
+    </form>
+</div>
+{% endblock %}

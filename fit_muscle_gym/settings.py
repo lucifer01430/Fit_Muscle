@@ -11,6 +11,7 @@ https://docs.djangoproject.com/en/5.1/ref/settings/
 """
 
 from pathlib import Path
+import mimetypes
 
 # Build paths inside the project like this: BASE_DIR / 'subdir'.
 BASE_DIR = Path(__file__).resolve().parent.parent
@@ -25,13 +26,16 @@ SECRET_KEY = 'django-insecure--e!ybq_*$z0fsr%0c&8+t+av*3uk^m8aem2tz)ggxhm#@g1!ok
 # SECURITY WARNING: don't run with debug turned on in production!
 DEBUG = True
 
-ALLOWED_HOSTS = []
+ALLOWED_HOSTS = ['*']
 
+
+
+mimetypes.add_type("image/svg+xml", ".svg", True)
 
 # Application definition
 
 INSTALLED_APPS = [
-    'django_jazzmin',
+    'jazzmin',
     'django.contrib.admin',
     'django.contrib.auth',
     'django.contrib.contenttypes',
@@ -117,13 +121,50 @@ USE_TZ = True
 
 # Static files (CSS, JavaScript, Images)
 # https://docs.djangoproject.com/en/5.1/howto/static-files/
-
 STATIC_URL = '/static/'
-STATICFILES_DIRS = [BASE_DIR / 'static']
-MEDIA_URL = '/media/'
-MEDIA_ROOT = BASE_DIR / 'media'
+STATICFILES_DIRS = [
+    BASE_DIR / "static",
+]
 
 # Default primary key field type
 # https://docs.djangoproject.com/en/5.1/ref/settings/#default-auto-field
 
 DEFAULT_AUTO_FIELD = 'django.db.models.BigAutoField'
+
+
+JAZZMIN_SETTINGS = {
+    "site_title": "Fit Muscle Admin",
+    "site_header": "Fit Muscle Gym",
+    "site_brand": "Fit Muscle",
+    # "site_logo": "images/logo1.png",  # path in /static/
+    "login_logo": "images/logo1.png",
+    "login_logo_dark": "images/logo1.png",
+
+    "welcome_sign": "Welcome to Fit Muscle Admin",
+    "copyright": "© 2025 Fit Muscle",
+    "show_sidebar": True,
+    "navigation_expanded": True,
+    "hide_apps": [],
+    "order_with_respect_to": ["auth", "core", "members"],
+
+    "icons": {
+         # default auth
+        "auth.Group": "fas fa-users-cog",
+        "auth.User": "fas fa-user",
+
+        # core app
+        "core.Service": "fas fa-dumbbell",
+        "core.Testimonial": "fas fa-comment",
+        "core.Trainer": "fas fa-user-tie",
+        "core.ClassSchedule": "fas fa-calendar-alt",
+        "core.GalleryImage": "fas fa-image",
+        "core.Notification": "fas fa-bell",
+        "core.Icon": "fas fa-icons",
+
+        # members app
+        "members.Membership": "fas fa-id-card-alt",
+    }, 
+    
+}
+
+

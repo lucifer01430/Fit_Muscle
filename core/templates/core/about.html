@@ -1,0 +1,160 @@
+{% extends 'base.html' %}
+{% load static %}
+
+{% block content %}
+        <!-- start first section -->
+        <section class="first_section blog_page social-triangle" id="home">
+            <div class="parallax-overlay"></div>
+            <div class="container">
+                <div class="banner_content col-12 col-lg-11 col-md-12" data-aos="zoom-in" data-aos-duration="1000">
+                    <h1 class="main_tiltle m-0">The 10 best exercises to do in your home</h1>
+                    <p>Elementum nulla lorem mauris arcu, posuere est amet. Cursus donec aenean scelerisque consectetur diam fermentum. Sagittis morbi a euismod eu. Odio ut amet lectus egestas habitasse sit in. Quis nunc volutpat purus mi tortor laoreet. Arcu, neque dictumst bibendum et convallis arcu auctor eros. Purus aenean facilisis commodo sit. Magna suspendisse nulla massa.</p>
+                    <a class="button fitzaro_btn" href="#about">Read More</a>
+                </div>
+                <a href="#about" class="scroll-down">
+                    <span class="scroll-arrow arrow1"></span>
+                    <span class="scroll-arrow arrow2"></span>
+                    <span class="scroll-arrow arrow3"></span>
+                </a>
+            </div>
+            <div class="slide_social_ic" data-aos="fade-up-left" data-aos-duration="1000">
+                <div class="triangle-1"></div>
+                <div class="banner_social">
+                    <a href="https://www.facebook.com/" target="_blank">FB</a>
+                    <a href="https://www.instagram.com/" target="_blank">IG</a>
+                    <a href="https://www.youtube.com/" target="_blank">YT</a>
+                </div>
+            </div>
+        </section>
+        <!-- end first section -->
+<!-- start About section -->
+<section class="about-section p-10" style="margin-bottom: 60px;" id="about">
+    <div class="fitzaro_health">
+        <div class="container">
+            <div class="row">
+                <div class="col-12 col-lg-6 col-md-6 about_img" data-aos="fade-right" data-aos-duration="1000">
+                    <div class="about_text">
+                        <img src="{% static 'video/text-effect.gif' %}" alt="text-effect image">
+                    </div>
+                    <img src="{% static 'images/about/about-img.png ' %}" alt="About_gym img" class="img-fluid abo-img">
+                </div>
+                <div class="col-12 col-lg-6 col-md-6">
+                    <div class="abo_content" data-aos="fade-left" data-aos-duration="1000">
+                        <span class="sub_heading">About Us</span>
+                        <h2 class="main_heading m-0">Giving Good Health To Good People</h2>
+                        <p class="about_detail m-0">Pretium suscipit feugiat ultrices morbi sagittis turpis amet enim.
+                            Velit lorem id fringilla quisque ullamcorper. Gravida nulla elementum quisque platea id
+                            aliquet. Et auctor pharetra a turpis tincidunt sem. Enim amet, malesuada integer nec
+                            viverra.</p>
+                        <div class="box_detail">
+                            <div class="list_icon">
+                                <i class="ri-check-line"></i>
+                                <p class="m-0 check_detail">Duis quis odio quis dui sagittis laoreet.</p>
+                            </div>
+                            <div class="list_icon">
+                                <i class="ri-check-line"></i>
+                                <p class="m-0 check_detail">Suspendisse tempus felis a libero mollis ultrices.</p>
+                            </div>
+                            <div class="list_icon">
+                                <i class="ri-check-line"></i>
+                                <p class="m-0 check_detail">Lorem ipsum dolor sit amet, consectetur adipiscing elit.</p>
+                            </div>
+                            <div class="list_icon">
+                                <i class="ri-check-line"></i>
+                                <p class="m-0 check_detail">Suspendisse tempus felis a libero mollis ultrices.</p>
+                            </div>
+                        </div>
+                    </div>
+                </div>
+            </div>
+
+            <div class="row build_best" data-aos="zoom-in-up" data-aos-easing="linear" data-aos-duration="1000">
+                <div class="col-12 col-md-6 col-lg-6 p-30">
+                    <div class="services_box">
+                        <div class="service-content">
+                            <div class="service_wrappe">
+                                <div class="instructor">
+                                    <div class="service_ic">
+                                        <img src="{% static 'images/svg/bounding.svg' %}" alt="Bounding-box image">
+                                    </div>
+                                    <div class="service_title">Dedicated Services</div>
+                                </div>
+                                <p class="blogs-block m-0 text-start">Amet lectus ut ullamcorper dui convallis dictumst
+                                    orci consequat. At senectus ornare amet suscipit. Morbi libero, nisi, diam lorem
+                                    diam in feugiat risus. Augue augue egestas mauris mauris fames sit at non urna.
+                                    Maecenas in mi vel viverra ac accumsan eros nibh sed.</p>
+                            </div>
+                        </div>
+                        <img src="{% static 'images/about/service-img1.png' %}" alt="Service-img1"
+                            class="img-cover img-fluid">
+                    </div>
+                </div>
+
+                <div class="col-12 col-md-6 col-lg-6 p-30">
+                    <div class="services_box">
+                        <div class="service-content">
+                            <div class="service_wrappe">
+                                <div class="instructor">
+                                    <div class="service_ic">
+                                        <img src="{% static 'images/svg/qualified.svg' %}" alt="Qualified image">
+                                    </div>
+                                    <div class="service_title">Qualified Instructar</div>
+                                </div>
+                                <p class="blogs-block m-0 text-start">Tempor pellentesque luctus mi porttitor at orci,
+                                    tristique. Cursus quam quam vulputate enim. Enim proin congue sed id aenean in quis.
+                                    Cras turpis varius mauris nunc urna, vitae nisl ullamcorper. Ultricies convallis
+                                    elementum sed ullamcorper integer sed aliquam volutpat, blandit. Porta.</p>
+                            </div>
+                        </div>
+                        <img src="{% static 'images/about/service-img2.png' %}" alt="Service-img2"
+                            class="img-cover img-fluid">
+                    </div>
+                </div>
+
+                <div class="col-12 col-md-6 col-lg-6">
+                    <div class="services_box">
+                        <div class="service-content">
+                            <div class="service_wrappe">
+                                <div class="instructor">
+                                    <div class="service_ic">
+                                        <img src="{% static 'images/svg/organic.svg' %}" alt="organic image">
+                                    </div>
+                                    <div class="service_title">Organic Proteins</div>
+                                </div>
+                                <p class="blogs-block m-0 text-start">Dui, consectetur nibh sed libero massa enim
+                                    consequat pellentesque. Gravida arcu mi amet neque. Aliquam pharetra euismod lectus
+                                    mattis lobortis eu aliquam. Semper sit pretium sit vulputate commodo, volutpat
+                                    bibendum quis. Et quisque eget tellus hendrerit id morbi magna tortor enim non.</p>
+                            </div>
+                        </div>
+                        <img src="{% static 'images/about/service-img3.png' %}" alt="Service-img3"
+                            class="img-cover img-fluid">
+                    </div>
+                </div>
+
+                <div class="col-12 col-md-6 col-lg-6">
+                    <div class="services_box">
+                        <div class="service-content">
+                            <div class="service_wrappe">
+                                <div class="instructor">
+                                    <div class="service_ic">
+                                        <img src="{% static 'images/svg/award.svg' %}" alt="award program image">
+                                    </div>
+                                    <div class="service_title">Award Programs</div>
+                                </div>
+                                <p class="blogs-block m-0 text-start">Vitae quisque aenean molestie risus imperdiet
+                                    vulputate etiam id. Fames et lectus sagittis, aliquet sed. Odio aliquam, eget
+                                    iaculis vel pulvinar lacus sem mollis. Pharetra quam velit lectus accumsan et
+                                    euismod morbi vitae elementum. Eget massa tempor urna, placerat at blandit.</p>
+                            </div>
+                        </div>
+                        <img src="{% static 'images/about/service-img4.png' %}" alt="Service-img4"
+                            class="img-cover img-fluid">
+                    </div>
+                </div>
+            </div>
+        </div>
+    </div>
+</section>
+<!-- end About section -->
+{% endblock %}

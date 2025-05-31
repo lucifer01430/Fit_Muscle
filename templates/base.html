@@ -1,0 +1,72 @@
+{% load static %}
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Fit Muscle Gym</title>
+
+    <!-- Favicons -->
+    <link rel="icon" href="{% static 'images/logo.png' %}" type="image/png">
+    <link href="{% static 'images/logo/fav-icon.png' %}" rel="icon">
+
+    <!-- Google Fonts -->
+    <link href="https://fonts.googleapis.com/css2?family=Roboto:wght@300;400;500;700&family=Overpass:wght@300;400;600;700&display=swap" rel="stylesheet">
+
+    <!-- ✅ Remix Icon -->
+    <link href="https://cdn.jsdelivr.net/npm/remixicon/fonts/remixicon.css" rel="stylesheet">
+
+    <!-- CSS Files -->
+    <link rel="stylesheet" type="text/css" href="{% static 'css/bootstrap.min.css' %}">
+    <link rel="stylesheet" type="text/css" href="{% static 'css/animate.css' %}">
+    <link rel="stylesheet" type="text/css" href="{% static 'css/swiper.min.css' %}">
+    <link rel="stylesheet" type="text/css" href="{% static 'css/aos.css' %}">
+    <link rel="stylesheet" type="text/css" href="{% static 'css/all.min.css' %}">
+    <link rel="stylesheet" type="text/css" href="{% static 'css/all.css' %}">
+    <link rel="stylesheet" type="text/css" href="{% static 'css/custom.css' %}">
+    <link rel="stylesheet" type="text/css" href="{% static 'css/media-query.css' %}">
+</head>
+
+<body>
+    <!-- Preloader -->
+    <div class="preloader">
+        <div class="loader">
+            <div class="loader-inner"></div>
+            <div class="loader-inner"></div>
+        </div>
+    </div>
+    <!-- end Preloader -->
+
+    <!-- Mouse Cursor Dragging Ball Start -->
+    <div class="mouseCursor cursor-outer"></div>
+    <div class="mouseCursor cursor-inner">view</div>
+    <!-- Mouse Cursor Dragging Ball Ends -->
+
+    {% include 'partials/navbar.html' %}
+
+    <div id="wrap">
+        {% block content %}{% endblock %}
+    </div>
+
+    {% include 'partials/footer.html' %}
+
+            <!-- scroll bottom-top  -->
+        <div class="scroll-top">
+            <svg class="border-circle svg-inner" width="100%" height="100%" viewbox="-1 -1 102 102">
+                <path d="M50,1 a49,49 0 0,1 0,98 a49,49 0 0,1 0,-98"></path>
+            </svg>
+        </div>
+
+
+    <!-- JS Files -->
+    <script src="{% static 'js/jquery-min-3.6.0.js' %}"></script>
+    <script src="{% static 'js/bootstrap.bundle.min.js' %}"></script>    
+    <script src="{% static 'js/swiper.min.js' %}"></script>
+    <script src="{% static 'js/aos.js' %}"></script>
+    <script src="{% static 'js/tilt.min.js' %}"></script>
+    <script src="{% static 'js/custom.js' %}"></script>
+
+
+
+</body>
+</html>
