@@ -1,0 +1,14 @@
+{% extends 'base.html' %}
+{% block content %}
+<div class="container mt-5">
+    <h2>Welcome, {{ user.username }}</h2>
+    {% if membership %}
+        <p><strong>Plan:</strong> {{ membership.plan }}</p>
+        <p><strong>Valid till:</strong> {{ membership.end_date }}</p>
+        <p><strong>Status:</strong> {{ membership.is_active|yesno:"Active,Expired" }}</p>
+    {% else %}
+        <p>You don't have a membership yet.</p>
+        <a href="{% url 'buy_membership' %}" class="btn btn-primary">Buy Membership</a>
+    {% endif %}
+</div>
+{% endblock %}

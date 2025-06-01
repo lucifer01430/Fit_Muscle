@@ -1,0 +1,228 @@
+{% extends 'base.html' %}
+{% load static %}
+
+{% block content %}
+<!-- start first section -->
+<section class="first_section blog_page social-triangle" id="home">
+    <div class="parallax-overlay"></div>
+    <div class="container">
+        <div class="banner_content col-12 col-lg-11 col-md-12" data-aos="zoom-in" data-aos-duration="1000">
+            <h1 class="main_tiltle m-0">The 10 Best Exercises to Do in Your Home</h1>
+            <p>You don’t need a gym to get fit — your home is your personal fitness zone! From building strength to
+                boosting stamina, these 10 easy exercises will help you stay in shape without equipment. Perfect for
+                beginners and pros alike, this guide covers bodyweight moves that deliver real results with consistency
+                and minimal space.</p>
+            <a class="button fitzaro_btn" href="#">Join Us</a>
+        </div>
+
+        <a href="#about" class="scroll-down">
+            <span class="scroll-arrow arrow1"></span>
+            <span class="scroll-arrow arrow2"></span>
+            <span class="scroll-arrow arrow3"></span>
+        </a>
+    </div>
+    <div class="slide_social_ic" data-aos="fade-up-left" data-aos-duration="1000">
+        <div class="triangle-1"></div>
+        <div class="banner_social">
+            <a href="https://www.facebook.com/" target="_blank">FB</a>
+            <a href="https://www.instagram.com/" target="_blank">IG</a>
+            <a href="https://www.youtube.com/" target="_blank">YT</a>
+        </div>
+    </div>
+</section>
+<!-- end first section -->
+
+<!-- start About section -->
+<section class="about-section p-10" id="about">
+    <div class="fitzaro_health">
+        <div class="container">
+            <div class="row">
+                <div class="col-12 col-lg-6 col-md-6 about_img" data-aos="fade-right" data-aos-duration="1000">
+                    <div class="about_text">
+                        <img src="{% static 'video/text-effect.gif' %}" alt="text-effect image">
+                    </div>
+                    <img src="{% static 'images/about/about-img.png ' %}" alt="About_gym img" class="img-fluid abo-img">
+                </div>
+                <div class="col-12 col-lg-6 col-md-6">
+                    <div class="abo_content" data-aos="fade-left" data-aos-duration="1000">
+                        <span class="sub_heading">About Us</span>
+                        <h2 class="main_heading m-0">Fueling Strength, Discipline & Transformation</h2>
+                        <p class="about_detail m-0">
+                            At Fit Muscle Gym Barabanki, we believe fitness is more than a goal — it’s a lifestyle.
+                            With industry-leading equipment, certified trainers, and a motivating atmosphere,
+                            we help you transform physically and mentally. Whether you're a beginner or a pro lifter,
+                            your journey starts here.
+                        </p>
+                        <div class="box_detail">
+                            <div class="list_icon">
+                                <i class="ri-check-line"></i>
+                                <p class="m-0 check_detail">Expert trainers with personalized workout guidance.</p>
+                            </div>
+                            <div class="list_icon">
+                                <i class="ri-check-line"></i>
+                                <p class="m-0 check_detail">Premium weight training and cardio equipment.</p>
+                            </div>
+                            <div class="list_icon">
+                                <i class="ri-check-line"></i>
+                                <p class="m-0 check_detail">Goal-based programs: Weight loss, gain & toning.</p>
+                            </div>
+                            <div class="list_icon">
+                                <i class="ri-check-line"></i>
+                                <p class="m-0 check_detail">Safe, hygienic, and energetic fitness environment.</p>
+                            </div>
+                        </div>
+                    </div>
+                </div>
+
+            </div>
+
+            <div class="row build_best" data-aos="zoom-in-up" data-aos-easing="linear" data-aos-duration="1000">
+                <div class="col-12 col-md-6 col-lg-6 p-30">
+                    <div class="services_box">
+                        <div class="service-content">
+                            <div class="service_wrappe">
+                                <div class="instructor">
+                                    <div class="service_ic">
+                                        <img src="{% static 'images/svg/bounding.svg' %}" alt="Bounding-box image">
+                                    </div>
+                                    <div class="service_title">Dedicated Services</div>
+                                </div>
+                                <p class="blogs-block m-0 text-start">
+                                    From beginner to advanced, we offer goal-driven training plans tailored just for
+                                    you. Our team is committed to your transformation — every session, every rep, every
+                                    day.
+                                </p>
+                            </div>
+                        </div>
+                        <img src="{% static 'images/about/service-img1.png' %}" alt="Service-img1"
+                            class="img-cover img-fluid">
+                    </div>
+                </div>
+
+                <div class="col-12 col-md-6 col-lg-6 p-30">
+                    <div class="services_box">
+                        <div class="service-content">
+                            <div class="service_wrappe">
+                                <div class="instructor">
+                                    <div class="service_ic">
+                                        <img src="{% static 'images/svg/qualified.svg' %}" alt="Qualified image">
+                                    </div>
+                                    <div class="service_title">Qualified Instructor</div>
+                                </div>
+                                <p class="blogs-block m-0 text-start">
+                                    Train under certified fitness experts who bring experience, energy, and motivation.
+                                    Our instructors guide every workout with personalized focus and technique
+                                    correction.
+                                </p>
+                            </div>
+
+                        </div>
+                        <img src="{% static 'images/about/service-img2.png' %}" alt="Service-img2"
+                            class="img-cover img-fluid">
+                    </div>
+                </div>
+
+                <div class="col-12 col-md-6 col-lg-6">
+                    <div class="services_box">
+                        <div class="service-content">
+                            <div class="service_wrappe">
+                                <div class="instructor">
+                                    <div class="service_ic">
+                                        <img src="{% static 'images/svg/organic.svg' %}" alt="organic image">
+                                    </div>
+                                    <div class="service_title">Organic Proteins</div>
+                                </div>
+                                <p class="blogs-block m-0 text-start">
+                                    We promote clean, organic nutrition to complement your workout journey. Our in-house
+                                    product partners ensure you get high-quality supplements for muscle recovery and
+                                    strength.
+                                </p>
+                            </div>
+
+                        </div>
+                        <img src="{% static 'images/about/service-img3.png' %}" alt="Service-img3"
+                            class="img-cover img-fluid">
+                    </div>
+                </div>
+
+                <div class="col-12 col-md-6 col-lg-6">
+                    <div class="services_box">
+                        <div class="service-content">
+                            <div class="service_wrappe">
+                                <div class="instructor">
+                                    <div class="service_ic">
+                                        <img src="{% static 'images/svg/award.svg' %}" alt="award program image">
+                                    </div>
+                                    <div class="service_title">Award Programs</div>
+                                </div>
+                                <p class="blogs-block m-0 text-start">
+                                    Progress deserves recognition. From monthly fitness milestones to transformation
+                                    challenges, we celebrate your consistency with awards, shoutouts, and exclusive
+                                    rewards.
+                                </p>
+                            </div>
+
+                        </div>
+                        <img src="{% static 'images/about/service-img4.png' %}" alt="Service-img4"
+                            class="img-cover img-fluid">
+                    </div>
+                </div>
+            </div>
+        </div>
+    </div>
+</section>
+<!-- end About section -->
+
+<!-- start trainer section -->
+<section class="best-trainer p-10" id="trainer">
+    <div class="img-shape1">
+        <img src="{% static 'images/trainer/gym-img.png ' %}" alt="gym-image" class="img-fluid">
+    </div>
+    <div class="img-shape2">
+        <img src="{% static 'images/trainer/muscle-img.png ' %}" alt="muscle-img" class="img-fluid">
+    </div>
+    <div class="container">
+        <div class="trainer-data text-center mb-60">
+            <span class="sub_heading">Best Trainer</span>
+            <h2 class="m-0">Our Professional Trainer</h2>
+            <h3 class="d-none">Hidden</h3>
+        </div>
+        <div class="trainer_slider" data-aos="zoom-in" data-aos-easing="linear" data-aos-duration="1000">
+            <div class="swiper-wrapper">
+                {% for trainer in trainers %}
+                <div class="team-box text-center swiper-slide">
+                    <div class="border-shape">
+                        <img src="{{ trainer.image.url }}" alt="{{ trainer.name }}" class="img-fluid">
+                    </div>
+                    <div class="box-inner">
+                        <h4 class="d-none">Hidden</h4>
+                        <h5 class="trainer-name m-0">{{ trainer.name }}</h5>
+                        <p class="designation m-0">{{ trainer.designation }}</p>
+                        <p class="trainer-detail m-0">{{ trainer.bio }}</p>
+                    </div>
+                    <ul class="team-social">
+                        {% if trainer.facebook %}
+                        <li class="ic-list">
+                            <a href="{{ trainer.facebook }}"><i class="ri-facebook-fill"></i></a>
+                        </li>
+                        {% endif %}
+                        {% if trainer.twitter %}
+                        <li class="ic-list">
+                            <a href="{{ trainer.twitter }}"><i class="ri-twitter-fill"></i></a>
+                        </li>
+                        {% endif %}
+                        {% if trainer.instagram %}
+                        <li class="ic-list">
+                            <a href="{{ trainer.instagram }}"><i class="ri-instagram-fill"></i></a>
+                        </li>
+                        {% endif %}
+                    </ul>
+                </div>
+                {% endfor %}
+            </div>
+        </div>
+    </div>
+</section>
+<!-- end trainer section -->
+
+{% endblock %}
