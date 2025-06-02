@@ -1,56 +1,79 @@
-       {% load static %}
-       
-       <!-- start footer section -->
-        <footer class="footer" id="footer">
-            <div class="parallax-overlay"></div>
-            <div class="container">
-                <div class="main-footer">
-                    <div class="row">
-                        <div class="col-12 col-md-12 col-lg-3">
-                            <div class="footer_first_row">
-                                <img src="{% static 'images/logo/footer-logo.png' %}" alt="Footer Logo Image" class="img-fluid">
-                                <div class="footer-social-list">
-                                    <a href="#" class="facebook-ic"><i class="ri-facebook-fill icons"></i></a>
-                                    <a href="#" class="twitter-ic"><i class="ri-twitter-fill icons"></i></a>
-                                    <a href="#" class="instagram-ic"><i class="ri-instagram-line icons"></i></a>
-                                    <a href="#" class="youtube-ic"><i class="ri-youtube-fill icons"></i></a>
-                                </div>
-                            </div>
-                        </div>
-                        <div class="col-12 col-md-4 col-lg-3">
-                            <div class="footer_second_row locate_places text-center">
-                                <div class="place_detail">
-                                    <i class="ri-map-pin-line"></i>
-                                </div>
-                                <p>121 Manila St. Brookly, CA</p>
-                            </div>
-                        </div>
-                        <div class="col-12 col-md-4 col-lg-3">
-                            <div class="footer_third_row locate_places text-center">
-                                <div class="place_detail">
-                                    <i class="ri-smartphone-line"></i>
-                                </div>
-                                <p><a href="tel:+012345678899">+01 234 567 8899</a></p>
-                            </div>
-                        </div>
-                        <div class="col-12 col-md-4 col-lg-3">
-                            <div class="footer_forth_row locate_places text-center">
-                                <div class="place_detail">
-                                    <i class="ri-mail-unread-line"></i>
-                                </div>
-                                <p><a href="mailto:contact@fitzaro.com">contact@fitzaro.com</a></p>
-                            </div>
+{% load static %}
+
+<!-- start subscribe section -->
+<section class="newsletter_subscribe" id="contact">
+    <div class="container">
+        <div class="row fitness-update" data-aos="fade-up" data-aos-easing="linear" data-aos-duration="1000">
+            <div class="col-12 col-lg-7">
+                <div class="reboot-img d-flex">
+                    <img src="{% static 'images/svg/paper-plane.svg ' %}" alt="Paper-plane" class="img-fluid">
+                    <h2 class="m-0 text-white">Get Latest Update Of Fitness Tips</h2>
+                </div>
+            </div>
+            <div class="col-12 col-lg-5">
+                <form class="footer_subscribe_box">
+                    <input type="email" class="subscribe-control" placeholder="Email Address">
+                    <button type="submit" class="fitzaro_btn subscribe-btn"><i
+                            class="ri-arrow-right-s-line"></i></button>
+                </form>
+            </div>
+        </div>
+    </div>
+</section>
+<!-- end subscribe section -->
+
+<!-- start footer section -->
+<footer class="footer" id="footer">
+    <div class="parallax-overlay"></div>
+    <div class="container">
+        <div class="main-footer">
+            <div class="row">
+                <div class="col-12 col-md-12 col-lg-3">
+                    <div class="footer_first_row">
+                        <img src="{% static 'images/logo/footer-logo.png' %}" alt="Footer Logo Image" class="img-fluid">
+                        <div class="footer-social-list">
+                            <a href="#" class="facebook-ic"><i class="ri-facebook-fill icons"></i></a>
+                            <a href="#" class="twitter-ic"><i class="ri-twitter-fill icons"></i></a>
+                            <a href="#" class="instagram-ic"><i class="ri-instagram-line icons"></i></a>
+                            <a href="#" class="youtube-ic"><i class="ri-youtube-fill icons"></i></a>
                         </div>
                     </div>
                 </div>
-                <div class="sub-footer">
-                    <div class="footer-copyright">
-                        <p class="m-0">&copy; 2022 FITZARO. All Rights Reserved.</p>
+                <div class="col-12 col-md-4 col-lg-3">
+                    <div class="footer_second_row locate_places text-center">
+                        <div class="place_detail">
+                            <i class="ri-map-pin-line"></i>
+                        </div>
+                        <p>121 Manila St. Brookly, CA</p>
                     </div>
-                    <div class="copyright_privacy">
-                        <a href="javascript:void(0);">Privacy Policy</a><span>|</span><a href="javascript:void(0);">Terms & Condition</a>
+                </div>
+                <div class="col-12 col-md-4 col-lg-3">
+                    <div class="footer_third_row locate_places text-center">
+                        <div class="place_detail">
+                            <i class="ri-smartphone-line"></i>
+                        </div>
+                        <p><a href="tel:+012345678899">+01 234 567 8899</a></p>
+                    </div>
+                </div>
+                <div class="col-12 col-md-4 col-lg-3">
+                    <div class="footer_forth_row locate_places text-center">
+                        <div class="place_detail">
+                            <i class="ri-mail-unread-line"></i>
+                        </div>
+                        <p><a href="mailto:contact@fitzaro.com">contact@fitzaro.com</a></p>
                     </div>
                 </div>
             </div>
-        </footer>
-        <!-- end footer section -->
+        </div>
+        <div class="sub-footer">
+            <div class="footer-copyright">
+                <p class="m-0">&copy; 2022 FITZARO. All Rights Reserved.</p>
+            </div>
+            <div class="copyright_privacy">
+                <a href="javascript:void(0);">Privacy Policy</a><span>|</span><a href="javascript:void(0);">Terms &
+                    Condition</a>
+            </div>
+        </div>
+    </div>
+</footer>
+<!-- end footer section -->

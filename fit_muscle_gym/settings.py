@@ -147,23 +147,28 @@ JAZZMIN_SETTINGS = {
     "hide_apps": [],
     "order_with_respect_to": ["auth", "core", "members"],
 
-    "icons": {
-         # default auth
-        "auth.Group": "fas fa-users-cog",
+     "icons": {
+        # Default auth
         "auth.User": "fas fa-user",
+        "auth.Group": "fas fa-users-cog",
 
-        # core app
+        # Core app models
+        "core.Appointment": "fas fa-calendar-check",
+        "core.Blog": "fas fa-blog",
+        "core.ClassSchedule": "fas fa-calendar-alt",
+        "core.Comment": "fas fa-comments",
+        "core.GalleryImage": "fas fa-image",
+        "core.Icon": "fas fa-icons",
+        "core.MembershipPlan": "fas fa-layer-group",
+        "core.Notification": "fas fa-bell",
+        "core.ScheduleBackground": "fas fa-paint-brush",
         "core.Service": "fas fa-dumbbell",
+        "core.Subscription": "fas fa-envelope",
         "core.Testimonial": "fas fa-comment",
         "core.Trainer": "fas fa-user-tie",
-        "core.ClassSchedule": "fas fa-calendar-alt",
-        "core.GalleryImage": "fas fa-image",
-        "core.Notification": "fas fa-bell",
-        "core.Icon": "fas fa-icons",
-
         # members app
         "members.Membership": "fas fa-id-card-alt",
-    }, 
+    },
     
 }
 
