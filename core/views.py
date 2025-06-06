@@ -104,12 +104,40 @@ def blog_detail(request, slug):
     })
 
 
+
 def about(request):
-    return render(request, 'core/about.html')
+    subscription_form = SubscriptionForm()
+    trainers = Trainer.objects.all()
+
+    return render(request, 'core/about.html', {
+        'subscription_form': subscription_form,
+        'trainers': trainers,
+    })
 
 def services(request):
     services = Service.objects.all()
-    return render(request, 'core/services.html', {'services': services})
+    subscription_form = SubscriptionForm()
+    trainers = Trainer.objects.all()
+    testimonials = Testimonial.objects.all()
+    membership_plans = MembershipPlan.objects.all()
+    success_message = None
+
+    if request.method == 'POST':
+        subscription_form = SubscriptionForm(request.POST)
+        if subscription_form.is_valid():
+            Subscription.objects.create(email=subscription_form.cleaned_data['email'])
+            success_message = "✅ Subscribed successfully!"
+            subscription_form = SubscriptionForm()
+
+    return render(request, 'core/services.html', {
+        'services': services,
+        'subscription_form': subscription_form,
+        'trainers': trainers,
+        'testimonials': testimonials,
+        'membership_plans': membership_plans,
+        'success_message': success_message,
+    })
+
 
 def classes(request):
     classes = ClassSchedule.objects.all()

@@ -2,39 +2,229 @@
 {% load static %}
 {% block title %}Fit Muscle GYM - Services{% endblock %}
 {% block content %}
-<!-- Services Section -->
-<section class="section py-5 bg-light">
+
+<!-- start first section -->
+<section class="first_section social-triangle" id="home">
+    <div class="parallax-overlay"></div>
     <div class="container">
-        <h2 class="text-center mb-5 animated fadeIn">Our Services</h2>
-        <div class="row">
-            <!-- Personal Training -->
-            <div class="col-md-4 mb-4">
-                <div class="card h-100 text-center animated">
-                    <div class="card-body">
-                        <h5 class="card-title">Personal Training</h5>
-                        <p class="card-text">Get one-on-one coaching from certified trainers to achieve your fitness goals.</p>
+        <div class="banner_content col-12 col-lg-11 col-md-12" data-aos="zoom-in" data-aos-duration="1000">
+            <h1 class="main_tiltle m-0">Our Signature Fitness Services</h1>
+            <p>At Fit Muscle Gym, our services are designed to match your fitness journey — from personalized training programs and weight management to strength building, cardio conditioning, and wellness support. Every service we offer is built on expert knowledge, modern equipment, and a genuine commitment to your growth. Explore what fits your goals and experience the difference of training with purpose.</p>
+            <a class="button fitzaro_btn" href="#services">Explore Services</a>
+        </div>
+        <a href="#services" class="scroll-down">
+            <span class="scroll-arrow arrow1"></span>
+            <span class="scroll-arrow arrow2"></span>
+            <span class="scroll-arrow arrow3"></span>
+        </a>
+    </div>
+    <div class="slide_social_ic" data-aos="fade-up-left" data-aos-duration="1000">
+        <div class="triangle-1"></div>
+        <div class="banner_social">
+            <a href="https://www.facebook.com/" target="_blank">FB</a>
+            <a href="https://www.instagram.com/" target="_blank">IG</a>
+            <a href="https://www.youtube.com/" target="_blank">YT</a>
+        </div>
+    </div>
+</section>
+<!-- end first section -->
+
+
+
+<!-- start service section -->
+<section class="fitzaro_service p-10" id="service">
+    <div class="background_shape animate-this">
+        <img src="{% static 'images/svg/service-shape.svg' %}" alt="service-shape image">
+    </div>
+    <div class="wrap_detail">
+        <div class="container">
+            <div class="row">
+                <div class="col-12 col-lg-6 col-md-6">
+                    <div class="service_img" data-aos="fade-right" data-aos-duration="1000">
+                        <div class="triangle-top"></div>
+                        <div class="triangle-bottom"></div>
+                        <img src="{% static 'images/service/service-img1.png' %}" alt="service image" class="img-fluid">
                     </div>
                 </div>
-            </div>
-            <!-- Group Classes -->
-            <div class="col-md-4 mb-4">
-                <div class="card h-100 text-center animated">
-                    <div class="card-body">
-                        <h5 class="card-title">Group Classes</h5>
-                        <p class="card-text">Join our energetic group classes, including yoga, Zumba, and HIIT.</p>
-                    </div>
-                </div>
-            </div>
-            <!-- Nutrition Coaching -->
-            <div class="col-md-4 mb-4">
-                <div class="card h-100 text-center animated">
-                    <div class="card-body">
-                        <h5 class="card-title">Nutrition Coaching</h5>
-                        <p class="card-text">Personalized meal plans to complement your fitness journey.</p>
+                <div class="col-12 col-lg-6 col-md-6">
+                    <div class="services-detail">
+                        <span class="sub_heading">Our Services</span>
+                        <h2 class="main_heading m-0">
+                            Unlock Strength, Boost Mobility & Embrace Healthier Living
+                        </h2>
+                        <p class="p-8 m-0">
+                            At Fit Muscle Gym, our services are crafted not just to build bodies, but to empower
+                            lifestyles.
+                            Whether you're lifting for strength, moving for flexibility, or training for endurance —
+                            our tailored fitness programs help you feel better, move smarter, and live stronger.
+                            <br><br>
+                            We combine expert guidance with modern equipment and a motivating community to ensure every
+                            session drives results.
+                            Join us to explore how functional movement, discipline, and recovery can redefine your
+                            personal wellness journey.
+                        </p>
+
+                        <a class="button fitzaro_btn" href="#appointment">Book Appointment</a>
                     </div>
                 </div>
             </div>
         </div>
     </div>
+
+    <!-- dynamic service cards -->
+    <div class="services_tool">
+        <div class="container">
+            <div class="row ordered-1" data-aos="fade-down" data-aos-easing="linear" data-aos-duration="1000">
+                {% for service in services %}
+                <div class="col-sm-6 col-lg-4 box-tool">
+                    <a href="javascript:void(0);">
+                        <div class="fitzaro_tools">
+                            {% if service.icon and service.icon.default_icon %}
+                            <img src="{{ service.icon.default_icon.url }}" alt="{{ service.title }} icon"
+                                class="img-fluid default-icon">
+                            {% else %}
+                            <i class="ri-question-line fs-1 text-white"></i>
+                            {% endif %}
+                            <h3 class="m-0">{{ service.title }}</h3>
+                        </div>
+                        <div class="order-number"></div>
+                        {% if service.icon and service.icon.hover_icon %}
+                        <img src="{{ service.icon.hover_icon.url }}" alt="{{ service.title }} hover icon"
+                            class="img-fluid exercise-img">
+                        {% endif %}
+                    </a>
+                </div>
+                {% empty %}
+                <p class="text-center text-light">No services available right now.</p>
+                {% endfor %}
+            </div>
+        </div>
+    </div>
+
 </section>
+<!-- end service section -->
+
+<!-- start Countdown section -->
+<section class="fitzaro_coundown p-10" id="countdown">
+    <div class="parallax-overlay"></div>
+    <div class="container">
+        <div class="row">
+            <div class="col-12 col-sm-6 col-lg-3">
+                <div class="countdown_formula text-center" data-aos="flip-up" data-aos-easing="linear"
+                    data-aos-duration="1000">
+                    <div class="counter_image">
+                        <img src="{% static 'images/svg/headphone.svg ' %}" alt="Headphone image" class="img-fluid">
+                    </div>
+                    <h4 class="m-0"><span class="coundown-number" data-number="80">80</span></h4>
+                    <div class="sub_info">Expert Trainer</div>
+                </div>
+            </div>
+            <div class="col-12 col-sm-6 col-lg-3">
+                <div class="countdown_formula text-center" data-aos="flip-up" data-aos-easing="linear"
+                    data-aos-duration="1000">
+                    <div class="counter_image">
+                        <img src="{% static 'images/svg/rating.svg ' %}" alt="Rating image" class="img-fluid">
+                    </div>
+                    <h4 class="m-0"><span class="coundown-number" data-number="120">120</span></h4>
+                    <div class="sub_info">Client Feedback</div>
+                </div>
+            </div>
+            <div class="col-12 col-sm-6 col-lg-3">
+                <div class="countdown_formula text-center" data-aos="flip-up" data-aos-easing="linear"
+                    data-aos-duration="1000">
+                    <div class="counter_image">
+                        <img src="{% static 'images/svg/gym.svg ' %}" alt="Gym image" class="img-fluid">
+                    </div>
+                    <h4 class="m-0"><span class="coundown-number" data-number="100">100</span></h4>
+                    <div class="sub_info">Total Branches</div>
+                </div>
+            </div>
+            <div class="col-12 col-sm-6 col-lg-3">
+                <div class="countdown_formula text-center" data-aos="flip-up" data-aos-easing="linear"
+                    data-aos-duration="1000">
+                    <div class="counter_image">
+                        <img src="{% static 'images/svg/winning.svg ' %}" alt="Winning image" class="img-fluid">
+                    </div>
+                    <h4 class="m-0"><span class="coundown-number" data-number="70">70</span></h4>
+                    <div class="sub_info">Award Winning</div>
+                </div>
+            </div>
+        </div>
+    </div>
+</section>
+<!-- end countdown section -->
+ <!-- start price section -->
+<section class="fitzaro-table p-10" id="price">
+    <div class="container">
+        <div class="table_heading text-center">
+            <span class="sub_heading">Membership Table</span>
+            <h2 class="mb-60">Choose Your Membership Plan</h2>
+        </div>
+        <div class="row" data-aos="fade-up" data-aos-easing="linear" data-aos-duration="1000">
+            {% for plan in membership_plans %}
+            <div class="col-12 col-lg-4 col-md-4">
+                <div class="pricing_data">
+                    <div class="table_img">
+                        <img src="{{ plan.image.url }}" alt="{{ plan.title }} image" class="img-fluid">
+                    </div>
+                    <div class="price-data">
+                        <span>{{ plan.title }}</span>
+                        <h3 class="m-0">₹{{ plan.price }}<span class="month-text">/{{ plan.duration_text }}</span></h3>
+                    </div>
+                </div>
+                <div class="inn-price-plan">
+                    <ol class="price_list">
+                        {% for feature in plan.features.splitlines %}
+                        <li>{{ feature }}</li>
+                        {% endfor %}
+                    </ol>
+                    <a class="button fitzaro_btn" href="javascript:void(0);">Join Now</a>
+                </div>
+            </div>
+            {% endfor %}
+        </div>
+    </div>
+</section>
+<!-- end price section -->
+
+<!-- start testimonial section -->
+<section class="testimonial-section p-10" id="testimonial">
+    <div class="container">
+        <div class="testimonial_detail text-center mb-60">
+            <span class="sub_heading">Testimonial</span>
+            <h2 class="m-0">What Our Clients Says</h2>
+        </div>
+        <div class="testimonial_slider" data-aos="zoom-in-down" data-aos-easing="linear" data-aos-duration="1000">
+            <div class="swiper-wrapper">
+                {% for testimonial in testimonials %}
+                <div class="client_review swiper-slide">
+                    <div class="review_detail">
+                        <p class="m-0">{{ testimonial.review }}</p>
+                    </div>
+                    <div class="client_profile">
+                        {% if testimonial.image %}
+                        <img src="{{ testimonial.image.url }}" alt="{{ testimonial.name }} profile" class="img-fluid">
+                        {% else %}
+                        <img src="{% static 'images/testimonial/default-profile.png' %}" alt="default"
+                            class="img-fluid">
+                        {% endif %}
+                        <div class="testimonial_data">
+                            <h3 class="m-0">{{ testimonial.name }}</h3>
+                            <p>Client</p> {# Optional: If you want to show a role field, add one in model #}
+                            <div class="star-trating">
+                                <i class="ri-star-fill"></i>
+                                <i class="ri-star-fill"></i>
+                                <i class="ri-star-fill"></i>
+                                <i class="ri-star-fill"></i>
+                                <i class="ri-star-fill"></i>
+                            </div>
+                        </div>
+                    </div>
+                </div>
+                {% endfor %}
+            </div>
+        </div>
+    </div>
+</section>
+<!-- end testimonial section -->
 {% endblock %}
