@@ -247,51 +247,40 @@
 <section class="comment-form p-10">
   <div class="container contact-form" data-aos="fade-right" data-aos-easing="linear" data-aos-duration="1000">
     <h2 class="mb-4">Leave A Reply</h2>
-    <form method="post" class="leave-comment row">
-      {% csrf_token %}
-      {{ form.non_field_errors }}
 
-      <!-- Name Field -->
-      <div class="col-12 col-md-6">
-        <div class="comment-icon d-flex align-items-center">
-          <i class="ri-user-line text-danger me-2"></i>
-          {{ form.name|add_class:"comment-form-control w-100 border-0 shadow-none" }}
+    {% if messages %}
+      {% for message in messages %}
+        <div class="alert alert-warning alert-dismissible fade show" role="alert">
+          {{ message }}
+          <button type="button" class="btn-close" data-bs-dismiss="alert" aria-label="Close"></button>
         </div>
-      </div>
+      {% endfor %}
+    {% endif %}
 
-      <!-- Email Field -->
-      <div class="col-12 col-md-6">
-        <div class="comment-icon d-flex align-items-center">
-          <i class="ri-mail-line text-danger me-2"></i>
-          {{ form.email|add_class:"comment-form-control w-100 border-0 shadow-none" }}
+    {% if user.is_authenticated %}
+      <form method="post" class="leave-comment row">
+        {% csrf_token %}
+        {{ form.non_field_errors }}
+
+        <!-- Comment Field -->
+        <div class="col-12">
+          <div class="comment-icon d-flex align-items-start">
+            <i class="ri-edit-line text-danger me-2 mt-1"></i>
+            {{ form.comment }}
+          </div>
         </div>
-      </div>
 
-      <!-- Comment Field -->
-      <div class="col-12 mt-4">
-        <div class="comment-icon d-flex align-items-start">
-          <i class="ri-edit-line text-danger me-2 mt-1"></i>
-          {{ form.comment|add_class:"comment-form-control w-100 border-0 shadow-none" }}
+        <div class="col-12 comment-btn mt-4">
+          <button type="submit" class="button fitzaro_btn">Post Comment</button>
         </div>
+      </form>
+    {% else %}
+      <div class="alert alert-info mt-3">
+        ⚠️ You must <strong><a href="#">log in</a></strong> to post a comment.
       </div>
-
-      <!-- Save Checkbox (optional) -->
-      <div class="col-12 mt-3">
-        <label class="d-flex align-items-center gap-2">
-          <input type="checkbox" class="checkbox"> Save My Name, Email, And Website In This Browser For The Next Time I Comment.
-        </label>
-      </div>
-
-      <!-- Submit Button -->
-      <div class="col-12 comment-btn mt-4">
-        <button type="submit" class="button fitzaro_btn">Post Comment</button>
-      </div>
-    </form>
+    {% endif %}
   </div>
 </section>
 <!-- end comment form -->
-
-
-
 
 {% endblock %}

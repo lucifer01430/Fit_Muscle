@@ -1,26 +1,37 @@
 {% load static %}
 
+
 <!-- start subscribe section -->
 <section class="newsletter_subscribe" id="contact">
     <div class="container">
         <div class="row fitness-update" data-aos="fade-up" data-aos-easing="linear" data-aos-duration="1000">
             <div class="col-12 col-lg-7">
                 <div class="reboot-img d-flex">
-                    <img src="{% static 'images/svg/paper-plane.svg ' %}" alt="Paper-plane" class="img-fluid">
+                    <img src="{% static 'images/svg/paper-plane.svg' %}" alt="Paper-plane" class="img-fluid">
                     <h2 class="m-0 text-white">Get Latest Update Of Fitness Tips</h2>
                 </div>
             </div>
             <div class="col-12 col-lg-5">
-                <form class="footer_subscribe_box">
-                    <input type="email" class="subscribe-control" placeholder="Email Address">
-                    <button type="submit" class="fitzaro_btn subscribe-btn"><i
-                            class="ri-arrow-right-s-line"></i></button>
+                <form method="post" class="footer_subscribe_box">
+                    {% csrf_token %}
+                    {{ subscription_form.email }}
+                    <button type="submit" class="fitzaro_btn subscribe-btn">
+                        <i class="ri-arrow-right-s-line"></i>
+                    </button>
                 </form>
+
+                {% if success_message %}
+                <div class="alert alert-success mt-2 mb-0 p-2 py-1 small">
+                    {{ success_message }}
+                </div>
+                {% endif %}
+
             </div>
         </div>
     </div>
 </section>
 <!-- end subscribe section -->
+
 
 <!-- start footer section -->
 <footer class="footer" id="footer">

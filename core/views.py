@@ -25,21 +25,30 @@ def home(request):
         if schedule.day in schedule_by_day:
             schedule_by_day[schedule.day].append(schedule)
 
-    # Forms
-    appointment_form = AppointmentForm(request.POST or None)
+    appointment_form = AppointmentForm()
+    subscription_form = SubscriptionForm()
     success_message = None
 
-    if request.method == 'POST' and appointment_form.is_valid():
-        # ✅ Manually save the form data to the Appointment model
-        data = appointment_form.cleaned_data
-        Appointment.objects.create(
-            full_name=data['full_name'],
-            phone_number=data['phone_number'],
-            email=data['email'],
-            message=data['message']
-        )
-        success_message = "Appointment submitted successfully!"
-        appointment_form = AppointmentForm()  # Reset the form
+    if request.method == 'POST':
+        if 'full_name' in request.POST:  # appointment form submitted
+            appointment_form = AppointmentForm(request.POST)
+            if appointment_form.is_valid():
+                data = appointment_form.cleaned_data
+                Appointment.objects.create(
+                    full_name=data['full_name'],
+                    phone_number=data['phone_number'],
+                    email=data['email'],
+                    message=data['message']
+                )
+                success_message = "Appointment submitted successfully!"
+                appointment_form = AppointmentForm()
+
+        elif 'email' in request.POST:  # subscription form submitted
+            subscription_form = SubscriptionForm(request.POST)
+            if subscription_form.is_valid():
+                Subscription.objects.create(email=subscription_form.cleaned_data['email'])
+                success_message = "✅ Subscribed successfully!"
+                subscription_form = SubscriptionForm()
 
     return render(request, 'core/home.html', {
         'services': services,
@@ -51,10 +60,10 @@ def home(request):
         'days': days,
         'row_range': row_range,
         'appointment_form': appointment_form,
+        'subscription_form': subscription_form,
         'success_message': success_message,
         'blogs': blogs,
     })
-
 
 def blog_detail(request, slug):
     blog = get_object_or_404(Blog, slug=slug)
@@ -66,27 +75,27 @@ def blog_detail(request, slug):
     checklist_left = checklist[:half]
     checklist_right = checklist[half:]
 
-    # Handle comment submission
-    if request.method == 'POST':
-        if not request.user.is_authenticated:
-            messages.error(request, "You must be logged in to comment.")
-            return redirect('login')  # Ensure 'login' URL exists
+    form = CommentForm() if request.user.is_authenticated else None
 
-        form = CommentForm(request.POST)
-        if form.is_valid():
-            comment = form.save(commit=False)
-            comment.blog = blog
-            comment.name = request.user.get_full_name() or request.user.username
-            comment.email = request.user.email
-            comment.save()
-            messages.success(request, 'Comment posted successfully!')
-            return redirect(request.path)
-    else:
-        form = CommentForm()
+    if request.method == 'POST':
+     if not request.user.is_authenticated:
+        messages.error(request, "⚠️ Please login to post a comment.")
+        return redirect(request.path)
+
+    form = CommentForm(request.POST)
+    if form.is_valid():
+        comment = form.save(commit=False)
+        comment.blog = blog
+        comment.name = request.user.get_full_name() or request.user.username
+        comment.email = request.user.email
+        comment.save()
+        messages.success(request, "✅ Your comment has been posted.")
+        return redirect(request.path)
+
 
     return render(request, 'core/blog_page.html', {
         'blog': blog,
-        'comments': blog.comments.all().order_by('-created_at'),
+        'comments': blog.comments.all(),
         'form': form,
         'checklist_left': checklist_left,
         'checklist_right': checklist_right,

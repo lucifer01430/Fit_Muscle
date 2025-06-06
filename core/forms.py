@@ -61,7 +61,10 @@ class AppointmentForm(forms.Form):
 class SubscriptionForm(forms.Form):
     email = forms.EmailField(
         required=True,
-        widget=forms.EmailInput(attrs={'placeholder': 'Email Address', 'class': 'subscribe-control'}),
+        widget=forms.EmailInput(attrs={
+            'placeholder': 'Email Address',
+            'class': 'subscribe-control'
+        }),
         error_messages={
             'required': 'Email is required.',
             'invalid': 'Enter a valid email address.'
@@ -81,23 +84,14 @@ class SubscriptionForm(forms.Form):
 class CommentForm(forms.ModelForm):
     class Meta:
         model = Comment
-        fields = ['name', 'email', 'comment']  # include name/email now
+        fields = ['comment']
         widgets = {
-            'name': forms.TextInput(attrs={
-                'placeholder': 'Enter Your Name',
-                'class': 'comment-form-control w-100 border-0 shadow-none',
-            }),
-            'email': forms.EmailInput(attrs={
-                'placeholder': 'Enter Your Email',
-                'class': 'comment-form-control w-100 border-0 shadow-none',
-            }),
             'comment': forms.Textarea(attrs={
                 'placeholder': 'Write your comment...',
                 'class': 'comment-form-control w-100 border-0 shadow-none',
+                'rows': 4,
             }),
         }
         error_messages = {
-            'name': {'required': 'Name is required.'},
-            'email': {'required': 'Email is required.'},
             'comment': {'required': 'Comment is required.'},
         }
